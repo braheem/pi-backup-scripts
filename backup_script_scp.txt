@@ -1,0 +1,8 @@
+option batch on
+#ignore confirmation for overwriting
+option confirm off
+option reconnecttime 15
+#specify scp profile
+open scp://pi@raspberrypi.com -privatekey=C:\Users\Abraham\Documents\PiPrivateKey.ppk
+synchronize local -mirror -filemask="| /proc/;/sys/;/tmp/;/boot/;/dev/;/run/;/mnt/;/media/;" C:\Pi-backup /
+exit
